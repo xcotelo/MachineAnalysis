@@ -20,13 +20,12 @@
 
 - Python 3.6+
 - `nmap` must be installed and accessible from the command line.
-- Unix-based OS (Linux/macOS) for `ping -c 1` syntax (adjust for Windows if needed)
 
 ---
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/xcotelo/advanced-network-analyzer.git
+git clone https://github.com/xcotelo/machineanalysis.git
 cd advanced-network-analyzer
 python3 analyzer.py

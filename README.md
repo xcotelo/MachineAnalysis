@@ -27,6 +27,6 @@
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/advanced-network-analyzer.git
+git clone https://github.com/xcotelo/advanced-network-analyzer.git
 cd advanced-network-analyzer
 python3 analyzer.py

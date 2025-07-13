@@ -1,14 +1,19 @@
 import subprocess
 import re
+import socket
 
 def detect_os_by_ttl(ttl):
     ttl = int(ttl)
     if 120 <= ttl <= 128:
         return "Windows"
     elif 60 <= ttl <= 64:
-        return "Linux/Unix"
+        return "Linux/Unix/macOS"
     elif ttl >= 250:
-        return "Solaris/AIX"
+        return "Solaris/AIX/Router Cisco"
+    elif 30 <= ttl <= 60:
+        return "IoT device or legacy system (for example, HP-UX)"
+    else:
+        return f"Error, could not determinate the system (TTL: {ttl})"
     
 def extract_port_info(output):
     port_lines = []
@@ -29,19 +34,19 @@ def system(ip_target):
                 print(f"[+] Detected OS (by TTL {ttl}): {so}")
             else:
                 print("[-] Could not determine TTL from ping response.")   
-                continue             
+                break             
 
             more = input("\nMore details? (y/n): ").strip().lower()
             if more in ['y', 'yes']:
                 print(f"[+] Scanning {ip_target} (this may take a while)...")
                 nmap = subprocess.run(f"nmap -sS -O --open -sV {ip_target}", shell=True, capture_output=True, text=True)
                 port_info = extract_port_info(nmap.stdout)
-                print("\n[+] Open ports and service versions:")
+                print("[+] Open ports and service versions:\n")
                 print(port_info)
                 break
             else:
                 print("[-] No open ports found or scan failed.")   
-                continue 
+                break 
             
         except subprocess.TimeoutExpired:
             print(f"Timeout {ip_target}")
@@ -51,9 +56,19 @@ def system(ip_target):
             return False
     
 
-def validate_ip(ip):
-    if not ip or any(char.isspace() for char in ip):
+def resolve_hostname(hostname):
+    try:
+        ip = socket.gethostbyname(hostname)
+        print(f"[+] Resolved {hostname} → {ip}")
+        return ip
+    except socket.gaierror:
+        print(f"[-] Could not resolve {hostname}")
         return False
+    
+def validate_ip(ip):
+    
+    if resolve_hostname(ip):
+        return ip
     
     parts = ip.split('.')
     if len(parts) != 4:
@@ -68,12 +83,12 @@ def main():
     print("<<< MACHINE ANALYSIS >>>")
     while True:
         try:
-            ip = input("\nEnter the IP or press 'q' to quit: ").strip()
+            ip = input("\n[+] Enter the IP address or the hostname: ").strip()
 
             if ip.lower() in ['q', 'quit', 'exit']:
                 print("\nQuitting...")
                 break
-
+            
             if not validate_ip(ip):
                 print("Error. Try again.")
                 continue

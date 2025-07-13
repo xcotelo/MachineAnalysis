@@ -38,6 +38,7 @@ python3 MachineAnalysis.py
 ---
 
 ## 💻 Example
+```bash
 [+] Enter the IP address or the hostname: example.com
 [+] Resolved example.com → 93.184.216.34
 [+] Connecting to 93.184.216.34

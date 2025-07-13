@@ -11,7 +11,7 @@
 - 🔍 **Nmap Integration** – Runs stealth SYN scans with OS and service detection.
 - 🔐 **Open Port Extraction** – Lists open TCP ports along with detected services.
 - 🧰 **Input Validation** – Accepts and validates both domain names and IP addresses.
-- ⚠️ **Optional Vulnerability Check** – Uses `searchsploit` to find known vulnerabilities for discovered services.
+- ⚠️ **Vulnerability Check** – Uses `searchsploit` to find known vulnerabilities for discovered services.
 
 ---
 

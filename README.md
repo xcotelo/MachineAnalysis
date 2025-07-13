@@ -34,7 +34,7 @@ cd machineanalysis
 
 # Run the script
 python3 MachineAnalysis.py
-
+```
 ---
 
 ## 💻 Example

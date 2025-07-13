@@ -1,6 +1,6 @@
-# 🔎 Advanced Network Analyzer (Python-based)
+# 🔎 Machine Analysis (Python-based)
 
-**Advanced Network Analyzer** is a Python tool designed for basic reconnaissance and OS fingerprinting using `ping` and `nmap`. It supports both IP addresses and hostnames, offering insights into the target's TTL-based OS and open TCP ports with detected services.
+**Machine Analysis** is a Python tool designed for basic reconnaissance and OS fingerprinting using `ping` and `nmap`. It supports both IP addresses and hostnames, offering insights into the target's TTL-based OS and open TCP ports with detected services.
 
 > ⚠️ **Note:** This project is a work in progress. Features such as vulnerability detection (after Nmap scanning) and extended analysis are planned for future releases.
 
@@ -27,5 +27,5 @@
 
 ```bash
 git clone https://github.com/xcotelo/machineanalysis.git
-cd advanced-network-analyzer
-python3 analyzer.py
+cd machinenalysis
+python3 MachineAnalysis.py

@@ -2,8 +2,6 @@
 
 **Machine Analysis** is a Python-based reconnaissance tool designed for basic OS fingerprinting and network scanning using `ping` and `nmap`. It works with both IP addresses and hostnames, providing insights into the target system's OS (based on TTL) and listing open TCP ports with associated services.
 
-> ⚠️ **Note:** This project is a work in progress. Future releases will include vulnerability detection using `searchsploit` and extended scanning features.
-
 ---
 
 ## 🚀 Features
@@ -29,10 +27,14 @@
 
 ```bash
 # Clone the repository
+sudo apt update && 
+sudo apt install exploitdb && 
+sudo apt install nmap && 
+sudo apt-get install python3.6
+
 git clone https://github.com/xcotelo/machineanalysis.git
 cd machineanalysis
 
-# Run the script
 python3 MachineAnalysis.py
 ```
 ---

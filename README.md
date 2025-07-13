@@ -21,7 +21,7 @@
 
 - Python 3.6 or higher
 - [Nmap](https://nmap.org/) installed and available via the command line
-- [SearchSploit](https://github.com/offensive-security/exploitdb) (optional for vulnerability lookup)
+- [SearchSploit](https://github.com/offensive-security/exploitdb)
 
 ---
 

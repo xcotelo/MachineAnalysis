@@ -28,11 +28,11 @@
 ## 📦 Installation & Usage
 
 ```bash
-# Clone the repository
 sudo apt update && 
-sudo apt install exploitdb && 
+sudo apt install exploitdb &&   
 sudo apt install nmap && 
-sudo apt-get install python3.6
+sudo apt-get install python3.6 &&
+pip install colorama
 
 git clone https://github.com/xcotelo/machineanalysis.git
 cd machineanalysis

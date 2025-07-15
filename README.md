@@ -31,8 +31,7 @@
 sudo apt update && 
 sudo apt install exploitdb &&   
 sudo apt install nmap && 
-sudo apt-get install python3.6 &&
-pip install colorama
+sudo apt-get install python3.6
 
 git clone https://github.com/xcotelo/machineanalysis.git
 cd machineanalysis

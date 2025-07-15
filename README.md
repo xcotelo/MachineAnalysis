@@ -4,6 +4,8 @@
 
 ---
 
+> This is not the final product. New updates are coming soon.
+
 ## 🚀 Features
 
 - 📡 **Hostname Resolution** – Automatically converts domain names into IP addresses.

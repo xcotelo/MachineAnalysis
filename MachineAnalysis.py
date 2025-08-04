@@ -113,7 +113,7 @@ def system(ip_target):
             more = input(f"\n{YELLOW}More details? (y/n): {RESET}").strip().lower()
             if more in ['y', 'yes']:
                 print(f"{YELLOW}[*] Scanning {ip_target} (this may take a while)...{RESET}")
-                nmap = subprocess.run(f"nmap -sS -O --open -sV {ip_target}", shell=True, capture_output=True, text=True)
+                nmap = subprocess.run(f"nmap -p- -sS --min-rate 5000 -n -Pn --open -O -sV {ip_target}", shell=True, capture_output=True, text=True)
                 
                 port_info = extract_port_info(nmap.stdout)
                 print(f"{GREEN}[+] Open ports and service versions:{RESET}")

@@ -36,7 +36,7 @@ sudo apt-get install python3.6
 git clone https://github.com/xcotelo/machineanalysis.git
 cd machineanalysis
 
-python3 MachineAnalysis.py
+./MachineAnalysis.py
 ```
 ---
 

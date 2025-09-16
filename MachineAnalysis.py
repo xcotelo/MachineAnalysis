@@ -2,8 +2,6 @@ import subprocess
 import re
 import socket
 
-#!/usr/bin/env python3
-
 # Colors
 RED = '\033[31m'
 GREEN = '\033[32m'

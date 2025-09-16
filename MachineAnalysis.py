@@ -2,6 +2,8 @@ import subprocess
 import re
 import socket
 
+#!/usr/bin/env python3
+
 # Colors
 RED = '\033[31m'
 GREEN = '\033[32m'
@@ -14,14 +16,16 @@ RESET = '\033[0m'
 
 def detect_os_by_ttl(ttl):
     ttl = int(ttl)
-    if 120 <= ttl <= 128:
+    if ttl >= 250:
+        return f"{GREEN}Solaris/Cisco/Unix{RESET}"
+    elif 120 <= ttl <= 128:
         return f"{GREEN}Windows{RESET}"
     elif 60 <= ttl <= 64:
-        return f"{GREEN}Linux/Unix/macOS{RESET}"
-    elif ttl >= 250:
-        return f"{GREEN}Solaris/AIX/Router Cisco{RESET}"
-    elif 30 <= ttl <= 60:
-        return f"{GREEN}IoT or legacy system (e.g. HP-UX){RESET}"
+        return f"{GREEN}Linux/macOS/Red Hat 9{RESET}"
+    elif 32 <= ttl <= 59:
+        return f"{GREEN}Windows 96/98/NT3.51{RESET}"
+    elif 30 <= ttl <= 31:
+        return f"{GREEN}IoT or DC-OSx{RESET}"
     else:
         return f"{GREEN}Unknown OS (TTL: {ttl}){RESET}"
 
